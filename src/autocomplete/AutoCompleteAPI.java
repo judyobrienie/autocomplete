@@ -9,7 +9,7 @@ public class AutoCompleteAPI {
 
 
 
-  public Map<Long, Term> termIndex = new HashMap<>();
+  public Map<Integer, Term> termIndex = new HashMap<>();
   
   
   public AutoCompleteAPI()

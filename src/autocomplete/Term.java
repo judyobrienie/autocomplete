@@ -2,13 +2,15 @@ package autocomplete;
 
 import static com.google.common.base.MoreObjects.toStringHelper;
 
+
+
 public class Term {
 	
 	  public int weight;
 	  public String term;
-	  static Long   counter = 0l;
-	  public Long   id;
-
+	  static int   counter = 1;
+	  public int   id;
+	  
 	
 
 	public Term()
@@ -23,7 +25,7 @@ public class Term {
 	  }
 
 	  
-	
+	  
 	  @Override
 	  public String toString()
 	  {

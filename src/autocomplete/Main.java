@@ -1,19 +1,26 @@
 package autocomplete;
 
 import java.io.File;
-
+import java.util.ArrayList;
 import java.util.Collection;
+import java.util.List;
 import java.util.Scanner;
+
 
 
 
 public class Main {
 
+	
+		
+		
+
+	
+	
 	public static void main(String[] args) throws Exception {
 		
 		AutoCompleteAPI AutoCompleteAPI = new AutoCompleteAPI();
-		
-		
+
 		 File usersFile = new File("../autocomplete/lib/test.txt");
 		  Scanner inUsers = new Scanner(usersFile);
 		  String delims = "[ ]";//each field in the file is separated(delimited) by a space.
@@ -23,6 +30,8 @@ public class Main {
 		    String data = inUsers.nextLine();
 		    // parse user details string
 		      String[] arrayTerms = data.split(delims);
+		     
+		 
 		    
 		    // output user data to console.
 		    if (arrayTerms.length == 2) {
@@ -41,15 +50,11 @@ public class Main {
 		
 		
 		
-		
-		
-
 	    Collection<Term> terms = AutoCompleteAPI.getTerms();
 	    System.out.println(terms);
 	    
-	 
+	
 	  
-	    
+	}
 	   
 	  }
-	}
