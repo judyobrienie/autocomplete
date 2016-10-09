@@ -2,10 +2,8 @@ package autocomplete;
 
 
 import java.io.File;
-import java.util.ArrayList;
 import java.util.Collection;
-import java.util.List;
-import java.util.Scanner;
+
 
 
 
@@ -22,10 +20,10 @@ public class Main {
 	
 	public static void main(String[] args) throws Exception {
 		
-		QuickAutoComplete AutoComplete = new QuickAutoComplete(usersFile);
+		 new QuickAutoComplete(usersFile);
 		
 
-		 AutoComplete BruteAutoComplete = new BruteAutoComplete(usersFile);
+		 new BruteAutoComplete(usersFile);
 		  
 		
 		

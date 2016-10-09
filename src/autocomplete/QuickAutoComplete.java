@@ -49,7 +49,7 @@ public class QuickAutoComplete {
 	  }
 
 	 
-	  public Term createTerm(int weight, String term) 
+	public Term createTerm(int weight, String term) 
 	  {
 	    Term terms = new Term (weight, term);
 	    termIndex.put(terms.id, terms);

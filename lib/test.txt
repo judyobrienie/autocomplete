@@ -1,5 +1,5 @@
-100 chase
+-1 chase
 200 blend
 300 blast
 400 bend
-500 choose
+500 bend

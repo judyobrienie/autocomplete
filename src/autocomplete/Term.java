@@ -8,7 +8,7 @@ public class Term {
 	
 	  public int weight;
 	  public String term;
-	  static int   counter = 1;
+	  static int   counter = 0;
 	  public int   id;
 	  
 	
@@ -19,7 +19,7 @@ public class Term {
 
 	  public Term(int weight, String term)
 	  {
-	    this.weight = weight;
+	    setWeight(weight);
 	    this.term = term;
 	    this.id  = counter++;
 	  }
@@ -34,6 +34,26 @@ public class Term {
 	    						   .addValue(term)
 	                               .toString();
 	  }
+	  
+	  public int getWeight() {
+			return weight;
+		}
+
+		public void setWeight(int weight) {
+			if( weight >= 0){
+				this.weight = weight;
+				}
+				else weight = 0;
+		}
+
+		public String getTerm() {
+			return term;
+		}
+
+		public void setTerm(String term) {
+			this.term = term;
+		} 
+	  
 	  
 
 	@Override

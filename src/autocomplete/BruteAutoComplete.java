@@ -7,9 +7,7 @@ import java.util.Scanner;
 
 public class BruteAutoComplete implements AutoComplete {
 
-	List<Integer> weight = new ArrayList<>();
-	List<String> term = new ArrayList<>();
-	
+	List<Term> listOfTerms = new ArrayList<>();
 	
 
 	public  BruteAutoComplete(File usersFile) throws Exception {
@@ -20,19 +18,20 @@ public class BruteAutoComplete implements AutoComplete {
 		  while (inUsers.hasNextLine()) {
 		    // get user and rating from data source
 		    String userDetails = inUsers.nextLine();
+		    
 		    // parse user details string
 		    String[] userTokens = userDetails.split(delims);
+		    //create Term
 		    Term list = new Term(Integer.parseInt(userTokens[0]), userTokens[1]);
-		    weight = new ArrayList<Integer>();
-		    term = new ArrayList<String>();
+		    //create an array of type Term
+		    listOfTerms =new ArrayList<Term>();
 		    // output user data to console.
 		    if (userTokens.length == 2) {
-		    	weight.add(Integer.parseInt(userTokens[0]));
-		    	term.add(userTokens[1]);
 		    	
-		      System.out.println("BruteForceId: " + weight + ",First Name:" + term);
-		      System.out.println(list);
+		    	listOfTerms.add(list);
+		    	
 		      
+		      System.out.println(listOfTerms);
 		    }else
 		    {
 		      inUsers.close();
@@ -44,13 +43,10 @@ public class BruteAutoComplete implements AutoComplete {
 		
 	}
 
-	 public Term createTerm(int weight, String term) 
-	  {
-	    Term terms = new Term (weight, term);
-	    
-	    return terms;
-	    
-	  }
+	 public void add(Term list)
+	    {
+	        listOfTerms.add(list);
+	    }
 		
 	
 	
