@@ -1,15 +1,18 @@
 package autocomplete;
 
+
 import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
 public class BruteAutoComplete implements AutoComplete {
-
-	List<Term> listOfTerms = new ArrayList<>();
 	
+	List<Integer> listOfWeights = new ArrayList<>();
+	List<String> listOfTerms = new ArrayList<>();
 
+	
+	
 	public  BruteAutoComplete(File usersFile) throws Exception {
 		
 		
@@ -24,14 +27,14 @@ public class BruteAutoComplete implements AutoComplete {
 		    //create Term
 		    Term list = new Term(Integer.parseInt(userTokens[0]), userTokens[1]);
 		    //create an array of type Term
-		    listOfTerms =new ArrayList<Term>();
+		    
 		    // output user data to console.
 		    if (userTokens.length == 2) {
 		    	
-		    	listOfTerms.add(list);
-		    	
+		    	listOfWeights.add(list.getWeight());
+		    	listOfTerms.add(list.getTerm());
 		      
-		      System.out.println(listOfTerms);
+		      
 		    }else
 		    {
 		      inUsers.close();
@@ -40,29 +43,45 @@ public class BruteAutoComplete implements AutoComplete {
 		  }
 		  inUsers.close();
 		
-		
+		  System.out.println(listOfWeights);
+	      System.out.println(listOfTerms);
+	    
+	      
 	}
+	
 
-	 public void add(Term list)
-	    {
-	        listOfTerms.add(list);
-	    }
-		
+    public List<String> getListOfTerms()
+    {
+    	return listOfTerms;
+    }
+    
+    public List<Integer> getListOfWeights()
+    {
+    	return listOfWeights;
+    }
+    
+    
 	
-	
-	
-	
-	
-	
-	
-	@Override
+		@Override
 	public double weightOf(String term) {
+			int index = -1;
+			double weight =0;
+			
+			if (term != null) {
+				for (String s : listOfTerms) {
+					index++;
+					if (s.toLowerCase().equals(term.toLowerCase())){
+					
+					
+					 weight = listOfWeights.get(index);}
+					
+					}
+				
+			}
+				return weight;
 		
-
-		return 0;
-	}
-
-
+			}
+		
 	
 		
 

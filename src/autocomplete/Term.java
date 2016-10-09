@@ -10,7 +10,7 @@ public class Term {
 	  public String term;
 	  static int   counter = 0;
 	  public int   id;
-	  
+
 	
 
 	public Term()
@@ -83,4 +83,5 @@ public class Term {
 			return false;
 		return true;
 	}
+
 }
